@@ -50,6 +50,7 @@ export type Logo = {
   variant: LogoVariant;
   format: LogoFormat;
   storage_url: string;
+  signedUrl?: string;
 };
 
 export type VerbalExample = {
@@ -90,4 +91,11 @@ export type DeveloperTokens = {
 export type Session = {
   unlockedAt: number;
   userLabel: string | null;
+};
+
+export type EnrichedClient = Client & {
+  brand_colors: BrandColor[];
+  logos: Logo[];
+  brand_fonts: BrandFont[];
+  developer_tokens: DeveloperTokens | null;
 };

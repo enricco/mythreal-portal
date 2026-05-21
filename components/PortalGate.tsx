@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 import { LockScreen } from "./LockScreen";
 import { PortalShell } from "./PortalShell";
 import { readSession } from "@/lib/session";
-import type { Client, Session } from "@/lib/types";
+import type { EnrichedClient, Session } from "@/lib/types";
 
 type Props = {
-  client: Pick<Client, "id" | "name" | "slug">;
+  client: EnrichedClient;
 };
 
 export function PortalGate({ client }: Props) {
