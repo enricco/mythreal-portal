@@ -98,4 +98,6 @@ export type EnrichedClient = Client & {
   logos: Logo[];
   brand_fonts: BrandFont[];
   developer_tokens: DeveloperTokens | null;
+  vibe_coordinates: VibeCoordinates | null;
+  verbal_examples: VerbalExample[];
 };

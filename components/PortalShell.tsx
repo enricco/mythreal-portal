@@ -8,6 +8,10 @@ import { ColorPalette } from "./ColorPalette";
 import { LogoVault } from "./LogoVault";
 import { TypographyPlayground } from "./TypographyPlayground";
 import { DeveloperTokens } from "./DeveloperTokens";
+import { VibeCoordinates } from "./VibeCoordinates";
+import { VerbalSoundboard } from "./VerbalSoundboard";
+import { SectionErrorBoundary } from "./SectionErrorBoundary";
+import { SectionTracker } from "./SectionTracker";
 import type { EnrichedClient, Session } from "@/lib/types";
 
 type Props = {
@@ -64,22 +68,34 @@ export function PortalShell({ client, session }: Props) {
       <main className="max-w-6xl mx-auto px-6 py-10 space-y-16">
         {SECTIONS.map((section) => (
           <section key={section.id} id={section.id} className="scroll-mt-20">
-            <h2 className="text-xs uppercase tracking-[0.2em] text-neutral-500 mb-4 font-semibold">
-              {section.label}
-            </h2>
-            {section.id === "colors" ? (
-              <ColorPalette client={client} session={session} showToast={showToast} />
-            ) : section.id === "logos" ? (
-              <LogoVault client={client} session={session} showToast={showToast} />
-            ) : section.id === "typography" ? (
-              <TypographyPlayground client={client} session={session} showToast={showToast} />
-            ) : section.id === "tokens" ? (
-              <DeveloperTokens client={client} session={session} showToast={showToast} />
-            ) : (
-              <div className="border border-dashed border-neutral-300 rounded-lg p-12 text-center text-neutral-400">
-                {section.label} module — coming in next phase.
-              </div>
-            )}
+            <SectionTracker
+              sectionId={section.id}
+              clientId={client.id}
+              userLabel={session.userLabel}
+            >
+              <SectionErrorBoundary sectionLabel={section.label}>
+                <h2 className="text-xs uppercase tracking-[0.2em] text-neutral-500 mb-4 font-semibold">
+                  {section.label}
+                </h2>
+                {section.id === "colors" ? (
+                  <ColorPalette client={client} session={session} showToast={showToast} />
+                ) : section.id === "logos" ? (
+                  <LogoVault client={client} session={session} showToast={showToast} />
+                ) : section.id === "typography" ? (
+                  <TypographyPlayground client={client} session={session} showToast={showToast} />
+                ) : section.id === "vibe" ? (
+                  <VibeCoordinates client={client} session={session} showToast={showToast} />
+                ) : section.id === "verbal" ? (
+                  <VerbalSoundboard client={client} session={session} showToast={showToast} />
+                ) : section.id === "tokens" ? (
+                  <DeveloperTokens client={client} session={session} showToast={showToast} />
+                ) : (
+                  <div className="border border-dashed border-neutral-300 rounded-lg p-12 text-center text-neutral-400">
+                    {section.label} module — coming in next phase.
+                  </div>
+                )}
+              </SectionErrorBoundary>
+            </SectionTracker>
           </section>
         ))}
       </main>

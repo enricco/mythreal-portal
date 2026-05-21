@@ -183,6 +183,7 @@ ${colors
           <button
             onClick={handleCopyPrimaryColor}
             disabled={!primaryColor}
+            title="Copy primary color HEX (⌘C)"
             className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-neutral-200 hover:border-neutral-800 bg-white text-neutral-800 hover:text-black font-medium transition cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
           >
             <span
@@ -196,6 +197,7 @@ ${colors
           <button
             onClick={handleDownloadLogoPack}
             disabled={zipping || logos.length === 0}
+            title="Download all logos in a ZIP pack"
             className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-neutral-200 hover:border-neutral-800 bg-white text-neutral-800 hover:text-black font-medium transition cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
           >
             <svg
@@ -226,6 +228,7 @@ ${colors
           {/* Action 3: Copy CSS Variables */}
           <button
             onClick={handleCopyCssVariables}
+            title="Copy stylesheet CSS variables (⌘C)"
             className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-neutral-200 hover:border-neutral-800 bg-white text-neutral-800 hover:text-black font-medium transition cursor-pointer"
           >
             <svg
@@ -248,6 +251,7 @@ ${colors
           <button
             onClick={handleCopyBrandBio}
             disabled={!client.brand_bio}
+            title="Copy brand bio text (⌘C)"
             className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-neutral-200 hover:border-neutral-800 bg-white text-neutral-800 hover:text-black font-medium transition cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
           >
             <svg

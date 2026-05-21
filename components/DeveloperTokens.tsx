@@ -141,6 +141,7 @@ export function DeveloperTokens({ client, session, showToast }: Props) {
         {/* Copy All Button */}
         <button
           onClick={handleCopyAll}
+          title="Copy all tokens (⌘C)"
           className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold tracking-wide border cursor-pointer transition duration-300 ${
             copied
               ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-400"

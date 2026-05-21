@@ -57,6 +57,27 @@ export default async function PortalPage({ params }: { params: Params }) {
         id,
         client_id,
         token_block
+      ),
+      vibe_coordinates (
+        id,
+        client_id,
+        code,
+        label,
+        surface_pct,
+        weight_pct,
+        accent_pct,
+        surface_name,
+        weight_name,
+        accent_name,
+        description,
+        applied_examples
+      ),
+      verbal_examples (
+        id,
+        client_id,
+        say_this,
+        dont_say_this,
+        context
       )
     `)
     .eq("slug", slug)
@@ -103,6 +124,8 @@ export default async function PortalPage({ params }: { params: Params }) {
     logos: enrichedLogos,
     brand_fonts: client.brand_fonts || [],
     developer_tokens: (client.developer_tokens && client.developer_tokens[0]) || null,
+    vibe_coordinates: (client.vibe_coordinates && client.vibe_coordinates[0]) || null,
+    verbal_examples: client.verbal_examples || [],
   };
 
   return <PortalGate client={enrichedClient} />;

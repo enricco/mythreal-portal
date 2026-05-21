@@ -121,6 +121,7 @@ export function ColorPalette({ client, session, showToast }: Props) {
                         {/* HEX Format */}
                         <button
                           onClick={() => handleCopy(color, "hex", color.hex)}
+                          title="Copy HEX value (⌘C)"
                           className="flex items-center justify-between text-xs px-2.5 py-1.5 rounded-md hover:bg-neutral-50 border border-transparent hover:border-neutral-200/50 text-neutral-600 hover:text-neutral-900 transition duration-150 text-left w-full cursor-pointer group"
                         >
                           <span className="font-semibold text-neutral-400">HEX</span>
@@ -143,6 +144,7 @@ export function ColorPalette({ client, session, showToast }: Props) {
                         {/* RGB Format */}
                         <button
                           onClick={() => handleCopy(color, "rgb", color.rgb)}
+                          title="Copy RGB value (⌘C)"
                           className="flex items-center justify-between text-xs px-2.5 py-1.5 rounded-md hover:bg-neutral-50 border border-transparent hover:border-neutral-200/50 text-neutral-600 hover:text-neutral-900 transition duration-150 text-left w-full cursor-pointer group"
                         >
                           <span className="font-semibold text-neutral-400">RGB</span>
@@ -167,6 +169,7 @@ export function ColorPalette({ client, session, showToast }: Props) {
                         {/* HSL Format */}
                         <button
                           onClick={() => handleCopy(color, "hsl", color.hsl)}
+                          title="Copy HSL value (⌘C)"
                           className="flex items-center justify-between text-xs px-2.5 py-1.5 rounded-md hover:bg-neutral-50 border border-transparent hover:border-neutral-200/50 text-neutral-600 hover:text-neutral-900 transition duration-150 text-left w-full cursor-pointer group"
                         >
                           <span className="font-semibold text-neutral-400">HSL</span>
